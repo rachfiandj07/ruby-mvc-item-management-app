@@ -1,6 +1,7 @@
 require_relative '../models/item.rb'
 require_relative '../models/item_category.rb'
 require_relative '../models/category.rb'
+require_relative '../validation/validation_item.rb'
 
 class ItemController
 
@@ -29,6 +30,8 @@ class ItemController
     end
 
     def create_items(params)
+        valid = ValidationItem.new(1, params["name"],params["price"])
+        false unless valid.valid_item?
         item = ItemCategory.new(1, params["name"],params["price"], 1, params["category_id"])
         item.insert_item
     end
