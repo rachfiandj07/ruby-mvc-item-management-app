@@ -1,0 +1,48 @@
+<% items.each do |item| %>
+<h1>Item Details <%= item.name %></h1>
+<% end %>
+
+<table>
+    <tr>
+        <th>
+        Id
+        </th>
+        <th>
+        Name
+         </th>
+         <th>
+         Price
+         </th>
+        <th>
+         Category
+         </th>
+
+    </tr>
+    <% i = 1%>
+    <% items.each do |item| %>
+    <tr>
+        <td>
+        <%= item.id%>
+        </td>
+        <td>
+            <%= item.name %>
+        </td>
+
+        <td>
+            <%= item.price %>
+        </td>
+        <% if item.category == nil%>
+        <td>
+            kategori kosong
+        </td>
+        <% else %>
+        <td>
+            <%= item.category %>
+        </td>
+        <% end %>
+    </tr>
+    <% end  %>
+
+
+</table>
+    <h1><a href="/">back</a></h1>

@@ -1,0 +1,58 @@
+<h1>Items</h1>
+
+<table>
+    <tr>
+        <th>
+            No
+        </th>
+        <th>
+        Id
+        </th>
+        <th>
+        Name
+         </th>
+         <th>
+         Price
+         </th>
+
+
+    </tr>
+    <% i = 1%>
+    <% item.each do |items| %>
+    <tr>
+        <td>
+        <%= i %>
+        </td>
+        <td>
+        <%= items.id%>
+        </td>
+        <td>
+            <%= items.name %>
+        </td>
+
+        <td>
+            <%= items.price %>
+        </td>
+
+        <td>
+        <a href="/items/<%= items.id%>">Show Details</a>
+        </td>
+        <td>
+        <a href="/items/update/<%= items.id%>">Edit</a>
+        </td>
+
+        <td>
+        <form method="POST" action="/items/delete/<%= items.id %>">
+        <input type="hidden" id="id" name="id" value="<%= items.id %>">
+        <button type="submit" value="submit">Delete</button>
+        </form>
+        </td>
+
+    </tr>
+    <% i += 1%>
+    <% end  %>
+
+
+</table>
+    <h1><a href="/items/new">create new item</a></h1>
+    <h1><a href="/category">category page</a></h1>

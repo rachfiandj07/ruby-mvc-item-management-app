@@ -1,0 +1,41 @@
+<% categories.each do |cat| %>
+<h1>Category Details <%= cat.name %></h1>
+<% end %>
+
+<table>
+    <tr>
+        <th>
+        Id
+        </th>
+        <th>
+        Categories Name
+         </th>
+        <th>
+         Categories Item
+         </th>
+
+    </tr>
+    <% i = 1%>
+    <% categories.each do |cat| %>
+    <tr>
+        <td>
+        <%= cat.id%>
+        </td>
+        <td>
+            <%= cat.name %>
+        </td>
+        <% if cat.category == nil%>
+        <td>
+            kategori item kosong
+        </td>
+        <% else %>
+        <td>
+            <%= cat.category %>
+        </td>
+        <% end %>
+    </tr>
+    <% end  %>
+
+
+</table>
+    <h1><a href="/category">back</a></h1>

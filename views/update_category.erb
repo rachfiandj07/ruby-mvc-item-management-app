@@ -1,0 +1,13 @@
+<% categories.each do |cat|%>
+<h1>edit category <%= cat.name %></h1>
+<% end %>
+
+<% categories.each do |cat|%>
+<form method="POST" action="/category/update/<%= cat.id %>/update">
+            <label for="">Nama Kategori</label><br>
+            <input type="name" id="name" name="name" value="<%= cat.name %>"><br>
+            <input type="hidden" id="id" name="id" value="<%= cat.id %>"><br>
+
+            <input type="submit" value="submit">
+</form>
+<% end %>

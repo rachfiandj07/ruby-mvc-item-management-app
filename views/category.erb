@@ -1,0 +1,50 @@
+<h1>Category</h1>
+
+<table>
+    <tr>
+        <th>
+            No
+        </th>
+        <th>
+        Id
+        </th>
+        <th>
+        Name
+         </th>
+
+
+    </tr>
+    <% i = 1%>
+    <% categories.each do |cat| %>
+    <tr>
+        <td>
+        <%= i %>
+        </td>
+        <td>
+        <%= cat.id%>
+        </td>
+        <td>
+            <%= cat.name %>
+        </td>
+
+        <td>
+        <a href="/category/<%= cat.id%>">Show Details</a>
+        </td>
+        <td>
+        <a href="/category/update/<%= cat.id%>">Edit</a>
+        </td>
+
+        <td>
+        <form method="POST" action="/category/delete/<%= cat.id %>">
+        <input type="hidden" id="id" name="id" value="<%= cat.id %>">
+        <button type="submit" value="submit">Delete</button>
+        </form>
+        </td>
+
+    </tr>
+    <% i += 1%>
+    <% end  %>
+
+
+</table>
+    <h1><a href="/category/new">create new category</a></h1>
