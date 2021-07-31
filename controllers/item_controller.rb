@@ -30,8 +30,8 @@ class ItemController
     end
 
     def create_items(params)
-        valid = ValidationItem.new(1, params["name"],params["price"])
-        false unless valid.valid_item?
+        # valid = ValidationItem.new(1, params["name"],params["price"])
+        # false unless valid.valid_item?
         item = ItemCategory.new(1, params["name"],params["price"], 1, params["category_id"])
         item.insert_item
     end

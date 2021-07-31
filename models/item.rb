@@ -24,4 +24,10 @@ class Item
         end
         items
     end
+
+    def valid?
+        return false if @name.nil? || @price.nil?
+        
+        true
+    end
 end
